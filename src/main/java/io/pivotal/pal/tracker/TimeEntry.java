@@ -3,17 +3,12 @@ package io.pivotal.pal.tracker;
 import java.time.LocalDate;
 
 public class TimeEntry{
+
     private long id;
     private long projectId;
     private long userId;
     private LocalDate date;
-
-    public TimeEntry(long projectId, long userId, LocalDate date, int hours) {
-        this.projectId = projectId;
-        this.userId = userId;
-        this.date = date;
-        this.hours = hours;
-    }
+    private int hours;
 
     public TimeEntry(long id, long projectId, long userId, LocalDate date, int hours) {
         this.id = id;
@@ -23,6 +18,15 @@ public class TimeEntry{
         this.hours = hours;
     }
 
+    public TimeEntry(long projectId, long userId, LocalDate date, int hours) {
+        this.projectId = projectId;
+        this.userId = userId;
+        this.date = date;
+        this.hours = hours;
+    }
+
+    public TimeEntry() {
+    }
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -44,9 +48,46 @@ public class TimeEntry{
         result = 31 * result + hours;
         return result;
     }
-
-    public TimeEntry() {
+    public long getId() {
+        return id;
     }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public long getProjectId() {
+        return projectId;
+    }
+
+    public void setProjectId(long projectId) {
+        this.projectId = projectId;
+    }
+
+    public long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(long userId) {
+        this.userId = userId;
+    }
+
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
+    }
+
+    public int getHours() {
+        return hours;
+    }
+
+    public void setHours(int hours) {
+        this.hours = hours;
+    }
+
 
     @java.lang.Override
     public java.lang.String toString() {
@@ -59,46 +100,6 @@ public class TimeEntry{
                 '}';
     }
 
-    private int hours;
 
-    public LocalDate getDate() {
-        return date;
-    }
 
-    public int getHours() {
-        return hours;
-    }
-
-    public void setHours(int hours) {
-        this.hours = hours;
-    }
-
-    public void setDate(LocalDate date) {
-        this.date = date;
-    }
-
-    public long getUserId() {
-        return userId;
-    }
-
-    public void setUserId(long userId) {
-        this.userId = userId;
-    }
-
-    public long getProjectId() {
-        return projectId;
-    }
-
-    public void setProjectId(long projectId) {
-        this.projectId = projectId;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
 }
-

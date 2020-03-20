@@ -13,7 +13,7 @@ import java.util.List;
 
 import static java.sql.Statement.RETURN_GENERATED_KEYS;
 
-public class JdbcTimeEntryRepository implements TimeEntryRepository {
+public class JdbcTimeEntryRepository implements TimeEntryRepository{
 
     private final JdbcTemplate jdbcTemplate;
 
@@ -42,7 +42,6 @@ public class JdbcTimeEntryRepository implements TimeEntryRepository {
 
         return find(generatedKeyHolder.getKey().longValue());
     }
-
     @Override
     public TimeEntry find(Long id) {
         return jdbcTemplate.query(
